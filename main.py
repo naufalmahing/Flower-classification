@@ -2,9 +2,9 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import pickle
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.pipeline import Pipeline
+# from sklearn.ensemble import RandomForestClassifier
+# from sklearn.preprocessing import MinMaxScaler
+# from sklearn.pipeline import Pipeline
 
 st.header('Tes deploy model ke streamlit sebagai dasar buat integrasi model ke aplikasi')
 st.text_input("Enter your name: ", key="name")
@@ -25,6 +25,7 @@ petal_width = st.slider('Petal width', 0.0, max(df['petal width']))
 
 # predict button
 if st.button('Make prediction'):
-    inputs = np.expand_dims([sepal_length, sepal_width, petal_length])
+    inputs = np.expand_dims([sepal_length, sepal_width, petal_length, petal_width], 0)
     result = loaded_model.predict(inputs)
-    st.write('It\'s ' + result)
+    print(result)
+    st.write('It\'s ' + np.squeeze(result, -1))
