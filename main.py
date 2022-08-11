@@ -17,3 +17,8 @@ loaded_model = pickle.load(open(filename, 'rb'))
 # show dataframe
 if st.checkbox('Show dataframe'):
     df
+
+sepal_length = st.slider('Sepal length', 0.0, max(df['sepal length']))
+sepal_width = st.slider('Sepal width', 0.0, max(df['sepal width']))
+petal_length = st.slider('Petal length', 0.0, max(df['petal length']))
+petal_width = st.slider('Petal width', 0.0, max(df['petal width']))
