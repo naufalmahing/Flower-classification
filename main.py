@@ -8,8 +8,8 @@ st.text_input("Enter your name: ", key="name")
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/iris-data.csv')
 
 # load model
-filename = 'model.sav'
-loaded_model = pickle.load(open(filename, 'rb'))
+# filename = 'model.sav'
+# loaded_model = pickle.load(open(filename, 'rb'))
 
 # show dataframe
 if st.checkbox('Show dataframe'):
